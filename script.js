@@ -33,9 +33,9 @@ function generatePassword() {
   var includeSymbol = window.confirm("include symbols?");
   var charCodes = LOWERCASE_CHAR_CODES
 
-  if (includeCapital === true) charCodes = charCodes.concat(UPPERCASE_CHAR_CODES);
-  if (includeNumber === true) charCodes = charCodes.concat(NUM_CHAR_CODES);
-  if (includeSymbol === true) charCodes = charCodes.concat(SYMBOL_CHAR_CODES);
+  if (includeCapital === true) { charCodes = charCodes.concat(UPPERCASE_CHAR_CODES); }
+  if (includeNumber === true) { charCodes = charCodes.concat(NUM_CHAR_CODES); }
+  if (includeSymbol === true) { charCodes = charCodes.concat(SYMBOL_CHAR_CODES); }
 
   const chosenChars = [];
   for (let i = 0; i < passLength; i++) {
