@@ -16,11 +16,8 @@ function writePassword() {
 function generatePassword() {
 
   passLength = window.prompt("choose password length");
-  if (passLength < 8) {
-    return "password must be at least 8 characters of length"
-  };
-  if (passLength > 128) {
-    return "password cannot be longer than 128 characters in length"
+  if (passLength < 8 || passLength > 128) {
+    return "password must be at least 8 characters and no longer than 128 characters in length"
   };
   var includeCapital = window.confirm("include capital letters?");
 
@@ -34,13 +31,13 @@ function generatePassword() {
   if (includeNumber === true) { charCodes = charCodes.concat(NUM_CHAR_CODES); }
   if (includeSymbol === true) { charCodes = charCodes.concat(SYMBOL_CHAR_CODES); }
   const passwordCharacters = [];
-  for (let i = 0; i < passLength.value, i++;) {
+  for (let i = 0; i < passLength.value; i++) {
     const characterCode = charCodes[Math.floor(Math.random() * charCodes.length)];
     passwordCharacters.push(String.fromCharCode(characterCode));
   } return passwordCharacters.join('');
 
 }
-l
+
 function arrayFromLowToHigh(low, high) {
   const array = [];
   for (let i = low; i <= high; i++) {
