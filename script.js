@@ -40,7 +40,7 @@ function generatePassword() {
   } return passwordCharacters.join('');
 
 }
-
+l
 function arrayFromLowToHigh(low, high) {
   const array = [];
   for (let i = low; i <= high; i++) {
