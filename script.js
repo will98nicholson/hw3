@@ -7,10 +7,14 @@ const SYMBOL_CHAR_CODES = arrayFromLowToHigh(33, 47).concat(arrayFromLowToHigh(5
 function arrayFromLowToHigh(low, high) {
   const array = [];
   for (let i = low; i <= high; i++) {
-    array.push(i);
+    array.push(String.fromCharCode(i));
   }
   return array;
 }
+console.log(UPPERCASE_CHAR_CODES)
+console.log(LOWERCASE_CHAR_CODES)
+console.log(NUM_CHAR_CODES)
+console.log(SYMBOL_CHAR_CODES)
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -31,16 +35,16 @@ function generatePassword() {
   var includeNumber = window.confirm("include numbers?");
 
   var includeSymbol = window.confirm("include symbols?");
-  var charCodes = LOWERCASE_CHAR_CODES
+  var chars = LOWERCASE_CHAR_CODES
 
-  if (includeCapital === true) { charCodes = charCodes.concat(UPPERCASE_CHAR_CODES); }
-  if (includeNumber === true) { charCodes = charCodes.concat(NUM_CHAR_CODES); }
-  if (includeSymbol === true) { charCodes = charCodes.concat(SYMBOL_CHAR_CODES); }
+  if (includeCapital === true) { chars = chars.concat(UPPERCASE_CHAR_CODES); }
+  if (includeNumber === true) { chars = chars.concat(NUM_CHAR_CODES); }
+  if (includeSymbol === true) { chars = chars.concat(SYMBOL_CHAR_CODES); }
 
   const chosenChars = [];
   for (let i = 0; i < passLength; i++) {
-    const characterCode = charCodes[Math.floor(Math.random() * charCodes.length)];
-    chosenChars.push(String.fromCharCode(characterCode));
+    const randomChar = chars[Math.floor(Math.random() * chars.length)];
+    chosenChars.push(randomChar);
   } return chosenChars.join('');
 
 
